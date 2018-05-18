@@ -29,10 +29,7 @@ export class Event extends React.Component<EventProps, {}> {
     render() {
         return (
             <div className="event">
-                <div
-                    className="event-image"
-                    style={{ position: "relative", width: "35%" }}
-                >
+                <div className="event-image">
                     <img
                         className="event-image-image"
                         src={this.props.imageUrl}
@@ -47,13 +44,7 @@ export class Event extends React.Component<EventProps, {}> {
                     </h1>
                 </div>
                 <div className="event-details">
-                    <div
-                        style={{
-                            display: "flex",
-                            alignItems: "space-around",
-                            justifyContent: "space-between"
-                        }}
-                    >
+                    <div className="event-details-section">
                         <div className="detail event-details-timing">
                             <img className="icon" src={timeIcon} />
                             <div>
@@ -69,13 +60,7 @@ export class Event extends React.Component<EventProps, {}> {
                             </div>
                         </div>
                     </div>
-                    <div
-                        style={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "space-between"
-                        }}
-                    >
+                    <div className="event-details-section">
                         <div className="detail event-details-location">
                             <img className="icon" src={locationIcon} />
                             <div>
@@ -83,18 +68,10 @@ export class Event extends React.Component<EventProps, {}> {
                                 <h4>{this.props.city}</h4>
                             </div>
                         </div>
-                        <div
-                            className="detail event-details-trainer"
-                            style={{ display: "flex" }}
-                        >
+                        <div className="detail event-details-trainer">
                             <img
                                 className="icon"
                                 src={this.props.trainerImage}
-                                style={{
-                                    width: "3rem",
-                                    height: "3rem",
-                                    borderRadius: "50%"
-                                }}
                             />
                             <h4>{this.props.trainer}</h4>
                         </div>
