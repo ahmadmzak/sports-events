@@ -42,7 +42,7 @@ class App extends React.Component<{}, { events: EventProps[] }> {
     };
     render() {
         return (
-            <div>
+            <div className="event-list">
                 {this.state.events.map((event: EventProps, index: number) => (
                     <Event
                         key={index}

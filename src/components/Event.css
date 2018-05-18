@@ -16,6 +16,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
+    width: 86vw;
+    align-self: center;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    margin: 0.5rem;
 }
 
 .event-details {
@@ -48,6 +53,7 @@
     background-attachment: fixed;
     width: 30vw;
     height: 10vw;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .event-image-text {
