@@ -28,67 +28,45 @@ export class Event extends React.Component<EventProps, {}> {
     }
     render() {
         return (
-            <div
-                className="event"
-                style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    padding: "2rem"
-                }}
-            >
+            <div className="event">
                 <div
                     className="event-image"
                     style={{ position: "relative", width: "35%" }}
                 >
                     <img
+                        className="event-image-image"
                         src={this.props.imageUrl}
-                        style={{
-                            backgroundSize: "cover",
-                            backgroundRepeat: "no-repeat",
-                            backgroundPosition: "center",
-                            backgroundAttachment: "fixed",
-                            width: "30vw",
-                            height: "10vw"
-                        }}
                     />
                     <h1
+                        className="event-image-text"
                         style={{
-                            color: this.props.imageUrl ? "white" : "black",
-                            position: "absolute",
-                            top: "50",
-                            left: "50"
+                            color: this.props.imageUrl ? "white" : "black"
                         }}
                     >
                         {this.props.name}
                     </h1>
                 </div>
-                <div
-                    className="event-details"
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "space-around",
-                        justifyContent: "center",
-                        width: "35%"
-                    }}
-                >
+                <div className="event-details">
                     <div
                         style={{
                             display: "flex",
-                            alignItems: "center",
+                            alignItems: "space-around",
                             justifyContent: "space-between"
                         }}
                     >
-                        <div className="event-details-timing">
+                        <div className="detail event-details-timing">
                             <img className="icon" src={timeIcon} />
-                            <h3>date</h3>
-                            <h4>time</h4>
+                            <div>
+                                <h3>{this.props.startDateTime}</h3>
+                                <h4>time</h4>
+                            </div>
                         </div>
-                        <div className="event-details-info">
+                        <div className="detail event-details-info">
                             <img className="icon" src={infoIcon} />
-                            <h3>name</h3>
-                            <h4>level</h4>
+                            <div>
+                                <h3>{this.props.info}</h3>
+                                <h4>{this.props.type}</h4>
+                            </div>
                         </div>
                     </div>
                     <div
@@ -98,16 +76,19 @@ export class Event extends React.Component<EventProps, {}> {
                             justifyContent: "space-between"
                         }}
                     >
-                        <div className="event-details-location">
+                        <div className="detail event-details-location">
                             <img className="icon" src={locationIcon} />
-                            <h4>{this.props.loc}</h4>
-                            <h4>{this.props.city}</h4>
+                            <div>
+                                <h4>{this.props.loc}</h4>
+                                <h4>{this.props.city}</h4>
+                            </div>
                         </div>
                         <div
-                            className="event-details-trainer"
+                            className="detail event-details-trainer"
                             style={{ display: "flex" }}
                         >
                             <img
+                                className="icon"
                                 src={this.props.trainerImage}
                                 style={{
                                     width: "3rem",
@@ -128,7 +109,7 @@ export class Event extends React.Component<EventProps, {}> {
                     </div>
                 </div>
                 <div className="event-booking">
-                    <div>
+                    <div className="detail events-detail-booking">
                         <img className="icon" src={userIcon} />
                         <h4>
                             {`${this.props.seatsBooked}/${this.props.seats}`}{" "}
@@ -137,7 +118,7 @@ export class Event extends React.Component<EventProps, {}> {
                     </div>
                     <button>Book Now</button>
                     <p>Book before:</p>
-                    <p>Mon 10 Sep 2018 - 9:00 pm</p>
+                    <p>{this.props.endDateTime}</p>
                 </div>
             </div>
         );
